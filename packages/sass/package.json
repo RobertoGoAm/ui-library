@@ -28,7 +28,6 @@
   },
   "lint-staged": {
     "**/*.scss": [
-      "npm run lint:scss"
     ]
   }
 }
