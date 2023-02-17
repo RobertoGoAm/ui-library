@@ -2,14 +2,31 @@
   "name": "component-library",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "prepare": "husky install"
+  },
   "private": true,
-  "dependencies": {},
   "devDependencies": {
-    "nx": "15.7.1",
-    "prettier": "^2.6.2"
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@commitlint/config-nx-scopes": "^17.4.3",
+    "@commitlint/cz-commitlint": "^17.4.4",
+    "commitizen": "^4.3.0",
+    "husky": "^8.0.0",
+    "nx": "15.7.1"
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional",
+      "@commitlint/config-nx-scopes"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  }
 }
