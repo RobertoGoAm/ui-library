@@ -1,0 +1,54 @@
+@use 'true' as *;
+@use '../../src/tools/display.scss' as *;
+
+@include describe('Given display tools') {
+	@include describe('When including "display-classes" mixin in a ".d" selector') {
+		@include it('Then it generates all the expected display classes') {
+			@include assert {
+				@include output {
+					.d {
+						@include display-classes;
+					}
+				}
+
+				@include expect {
+					.d-block {
+						display: block;
+					}
+
+					.d-flex {
+						display: flex;
+					}
+
+					.d-inline {
+						display: inline;
+					}
+
+					.d-inline-block {
+						display: inline-block;
+					}
+
+					.d-inline-flex {
+						display: inline-flex;
+					}
+
+					.d-none {
+						display: none;
+					}
+
+					.d-table {
+						display: table;
+					}
+
+					.d-table-cell {
+						display: table-cell;
+					}
+
+					.d-table-row {
+						display: table-row;
+					}
+				}
+			}
+		}
+	}
+}

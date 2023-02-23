@@ -1,0 +1,22 @@
+@use 'sass:meta' as meta;
+@use '../settings/colors.scss' as colors;
+
+/// Generate classes based on the $colors variable and the provided attribute, if provided
+///
+/// @group tools
+/// @access public
+///
+/// @param {string} $attribute - The CSS attribute to use inside the selector
+/// @output The resulting utility classes
+///
+/// @example scss - Create background-color utility classes
+///		.background {
+///			@include color-classes('background-color');
+///		}
+@mixin color-classes($attribute: 'color') {
+  @each $name, $color in colors.$colors {
+    &-color-#{$name} {
+      #{$attribute}: $color;
+    }
+  }
+}

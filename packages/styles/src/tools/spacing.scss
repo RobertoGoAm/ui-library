@@ -1,0 +1,106 @@
+@use 'sass:math' as math;
+@use 'sass:meta' as meta;
+@use 'sass:string' as string;
+@use '../settings/spacing.scss' as spacing;
+
+/// Generate margin classes based on the $spacers and $sides variables
+///
+/// @group tools
+/// @access public
+///
+/// @output The resulting utility classes
+///
+/// @example scss - Create margin utility classes
+///		.m {
+///			@include margin-classes;
+///		}
+@mixin margin-classes() {
+	@each $space in spacing.$spacers {
+    $current-amount: spacing.$base-spacer * math.div($space, 4);
+
+    @if math.div($current-amount, 1px) == 0 {
+      $current-amount: 0;
+    }
+
+		&-#{$space} {
+			margin: $current-amount;
+    }
+
+		&x-#{$space} {
+			margin-left: $current-amount;
+			margin-right: $current-amount;
+		}
+
+		&y-#{$space} {
+			margin-top: $current-amount;
+			margin-bottom: $current-amount;
+		}
+
+		@each $side in spacing.$sides {
+			&#{string.slice($side, 0, 1)}-#{$space} {
+				margin-#{$side}: $current-amount;
+			}
+		}
+	}
+
+	@each $side in spacing.$sides {
+		&#{string.slice($side, 0, 1)}-auto {
+				margin-#{$side}: auto;
+		}
+	}
+
+	&-auto {
+		margin: auto;
+	}
+
+	&x-auto {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&y-auto {
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+}
+
+/// Generate padding classes based on the $spacers and $sides variables
+///
+/// @group tools
+/// @access public
+///
+/// @output The resulting utility classes
+///
+/// @example scss - Create padding utility classes
+///		.p {
+///			@include padding-classes;
+///		}
+@mixin padding-classes() {
+	@each $space in spacing.$spacers {
+    $current-amount: spacing.$base-spacer * math.div($space, 4);
+
+    @if math.div($current-amount, 1px) == 0 {
+      $current-amount: 0;
+    }
+
+		&-#{$space} {
+			padding: $current-amount;
+		}
+
+		&x-#{$space} {
+			padding-left: $current-amount;
+			padding-right: $current-amount;
+		}
+
+		&y-#{$space} {
+			padding-top: $current-amount;
+			padding-bottom: $current-amount;
+		}
+
+		@each $side in spacing.$sides {
+			&#{string.slice($side, 0, 1)}-#{$space} {
+				padding-#{$side}: $current-amount;
+			}
+		}
+	}
+}

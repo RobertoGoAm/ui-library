@@ -1,0 +1,13 @@
+@use '../tools/colors.scss' as colors;
+
+.background {
+	@include colors.color-classes('background-color');
+}
+
+.border {
+	@include colors.color-classes('border-color');
+}
+
+.text {
+	@include colors.color-classes;
+}

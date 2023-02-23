@@ -1,0 +1,9 @@
+@use '../tools/spacing.scss' as spacing;
+
+.m {
+	@include spacing.margin-classes;
+}
+
+.p {
+	@include spacing.padding-classes;
+}

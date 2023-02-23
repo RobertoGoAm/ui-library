@@ -1,0 +1,314 @@
+@use 'true' as *;
+@use '../../src/tools/colors.scss' as *;
+
+@include describe('Given color tools') {
+	@include describe('When including "color-classes" mixin in a ".text" selector') {
+		@include it('Then it generates all the expected text-color classes') {
+			@include assert {
+				@include output {
+					.text {
+						@include color-classes;
+					}
+				}
+
+				@include expect {
+					.text-color-primary {
+						color: #0288D1;
+					}
+
+					.text-color-primary-50 {
+						color: #E1F5FE;
+					}
+
+					.text-color-primary-100 {
+						color: #B3E5FC;
+					}
+
+					.text-color-primary-200 {
+						color: #81D4FA;
+					}
+
+					.text-color-primary-300 {
+						color: #4FC3F7;
+					}
+
+					.text-color-primary-400 {
+						color: #29B6F6;
+					}
+
+					.text-color-primary-500 {
+						color: #03A9F4;
+					}
+
+					.text-color-primary-600 {
+						color: #039BE5;
+					}
+
+					.text-color-primary-700 {
+						color: #0288D1;
+					}
+
+					.text-color-primary-800 {
+						color: #0277BD;
+					}
+
+					.text-color-primary-900 {
+						color: #01579B;
+					}
+
+					.text-color-secondary {
+						color: #EC9722;
+					}
+
+					.text-color-secondary-50 {
+						color: #FCF2E1;
+					}
+
+					.text-color-secondary-100 {
+						color: #F8DFB5;
+					}
+
+					.text-color-secondary-200 {
+						color: #F5CA85;
+					}
+
+					.text-color-secondary-300 {
+						color: #F1B556;
+					}
+
+					.text-color-secondary-400 {
+						color: #EEA536;
+					}
+
+					.text-color-secondary-500 {
+						color: #EC9722;
+					}
+
+					.text-color-secondary-600 {
+						color: #E88C1F;
+					}
+
+					.text-color-secondary-700 {
+						color: #E17D1B;
+					}
+
+					.text-color-secondary-800 {
+						color: #DB6F18;
+					}
+
+					.text-color-secondary-900 {
+						color: #D05815;
+					}
+				}
+			}
+		}
+	}
+
+	@include describe('When including "color-classes" mixin in a ".background" selector') {
+		@include describe('And "background-color" is supplied as attribute') {
+			@include it('Then it generates all the expected background-color classes') {
+				@include assert {
+					@include output {
+						.background {
+							@include color-classes('background-color');
+						}
+					}
+
+					@include expect {
+						.background-color-primary {
+							background-color: #0288D1;
+						}
+
+						.background-color-primary-50 {
+							background-color: #E1F5FE;
+						}
+
+						.background-color-primary-100 {
+							background-color: #B3E5FC;
+						}
+
+						.background-color-primary-200 {
+							background-color: #81D4FA;
+						}
+
+						.background-color-primary-300 {
+							background-color: #4FC3F7;
+						}
+
+						.background-color-primary-400 {
+							background-color: #29B6F6;
+						}
+
+						.background-color-primary-500 {
+							background-color: #03A9F4;
+						}
+
+						.background-color-primary-600 {
+							background-color: #039BE5;
+						}
+
+						.background-color-primary-700 {
+							background-color: #0288D1;
+						}
+
+						.background-color-primary-800 {
+							background-color: #0277BD;
+						}
+
+						.background-color-primary-900 {
+							background-color: #01579B;
+						}
+
+						.background-color-secondary {
+							background-color: #EC9722;
+						}
+
+						.background-color-secondary-50 {
+							background-color: #FCF2E1;
+						}
+
+						.background-color-secondary-100 {
+							background-color: #F8DFB5;
+						}
+
+						.background-color-secondary-200 {
+							background-color: #F5CA85;
+						}
+
+						.background-color-secondary-300 {
+							background-color: #F1B556;
+						}
+
+						.background-color-secondary-400 {
+							background-color: #EEA536;
+						}
+
+						.background-color-secondary-500 {
+							background-color: #EC9722;
+						}
+
+						.background-color-secondary-600 {
+							background-color: #E88C1F;
+						}
+
+						.background-color-secondary-700 {
+							background-color: #E17D1B;
+						}
+
+						.background-color-secondary-800 {
+							background-color: #DB6F18;
+						}
+
+						.background-color-secondary-900 {
+							background-color: #D05815;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include describe('When including "color-classes" mixin in a ".border" selector') {
+		@include describe('And "border-color" is supplied as attribute') {
+			@include it('Then it generates all the expected border-color classes') {
+				@include assert {
+					@include output {
+						.border {
+							@include color-classes('border-color');
+						}
+					}
+
+					@include expect {
+						.border-color-primary {
+							border-color: #0288D1;
+						}
+
+						.border-color-primary-50 {
+							border-color: #E1F5FE;
+						}
+
+						.border-color-primary-100 {
+							border-color: #B3E5FC;
+						}
+
+						.border-color-primary-200 {
+							border-color: #81D4FA;
+						}
+
+						.border-color-primary-300 {
+							border-color: #4FC3F7;
+						}
+
+						.border-color-primary-400 {
+							border-color: #29B6F6;
+						}
+
+						.border-color-primary-500 {
+							border-color: #03A9F4;
+						}
+
+						.border-color-primary-600 {
+							border-color: #039BE5;
+						}
+
+						.border-color-primary-700 {
+							border-color: #0288D1;
+						}
+
+						.border-color-primary-800 {
+							border-color: #0277BD;
+						}
+
+						.border-color-primary-900 {
+							border-color: #01579B;
+						}
+
+						.border-color-secondary {
+							border-color: #EC9722;
+						}
+
+						.border-color-secondary-50 {
+							border-color: #FCF2E1;
+						}
+
+						.border-color-secondary-100 {
+							border-color: #F8DFB5;
+						}
+
+						.border-color-secondary-200 {
+							border-color: #F5CA85;
+						}
+
+						.border-color-secondary-300 {
+							border-color: #F1B556;
+						}
+
+						.border-color-secondary-400 {
+							border-color: #EEA536;
+						}
+
+						.border-color-secondary-500 {
+							border-color: #EC9722;
+						}
+
+						.border-color-secondary-600 {
+							border-color: #E88C1F;
+						}
+
+						.border-color-secondary-700 {
+							border-color: #E17D1B;
+						}
+
+						.border-color-secondary-800 {
+							border-color: #DB6F18;
+						}
+
+						.border-color-secondary-900 {
+							border-color: #D05815;
+						}
+					}
+				}
+			}
+		}
+	}
+}

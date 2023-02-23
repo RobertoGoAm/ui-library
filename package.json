@@ -1,25 +1,39 @@
 {
-  "name": "component-library",
+  "name": "ui-library",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {
-    "prepare": "husky install"
-  },
+  "scripts": {},
   "private": true,
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
     "@commitlint/config-nx-scopes": "^17.4.3",
-    "husky": "^8.0.0",
-    "nx": "15.7.1"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional",
-      "@commitlint/config-nx-scopes"
-    ]
+    "@nrwl/eslint-plugin-nx": "15.7.2",
+    "@nrwl/js": "^15.7.2",
+    "@nrwl/linter": "15.7.2",
+    "@nrwl/vite": "15.7.2",
+    "@nrwl/workspace": "15.7.2",
+    "@nxext/svelte": "^15.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "@vitest/coverage-c8": "~0.25.8",
+    "@vitest/ui": "^0.25.8",
+    "eslint": "~8.15.0",
+    "eslint-config-prettier": "8.1.0",
+    "husky": "^8.0.3",
+    "jsdom": "~20.0.3",
+    "lint-staged": "^13.1.2",
+    "modern-normalize": "^1.1.0",
+    "nx": "15.7.2",
+    "nx-stylelint": "^15.0.0",
+    "path": "^0.12.7",
+    "prettier": "^2.6.2",
+    "sass": "^1.58.3",
+    "sass-true": "^7.0.0",
+    "typescript": "~4.8.2",
+    "vite": "^4.0.1",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-tsconfig-paths": "^4.0.2",
+    "vitest": "^0.25.8"
   }
 }

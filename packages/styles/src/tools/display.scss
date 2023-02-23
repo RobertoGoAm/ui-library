@@ -1,0 +1,20 @@
+@use '../settings/display.scss' as display;
+
+/// Generate display classes based on the $display-values variable
+/// 
+/// @group tools
+/// @access public
+/// 
+/// @output The resulting utility classes
+///
+/// @example scss - Create display utility classes
+///		.d {
+///			@include display-classes;
+///		}
+@mixin display-classes() {
+	@each $display-value in display.$display-values {
+		&-#{$display-value}{
+			display: $display-value;
+		}
+	}
+}

@@ -1,0 +1,5 @@
+@use '../tools/display.scss' as display;
+
+.d {
+	@include display.display-classes;
+}
