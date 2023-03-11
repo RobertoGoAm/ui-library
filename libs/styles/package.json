@@ -1,0 +1,17 @@
+{
+  "name": "@ui-library/styles",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "main": "index.ts",
+  "files": [
+    "src/**/*.scss"
+  ],
+  "dependencies": {
+    "modern-normalize": "^1.1.0"
+  },
+  "devDependencies": {
+    "path": "^0.12.7",
+    "sass": "^1.59.2",
+    "sass-true": "^7.0.0"
+  }
+}

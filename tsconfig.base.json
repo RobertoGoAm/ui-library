@@ -18,8 +18,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ui-library/components": [
-        "packages/components/src/index.ts"
+      "@ui-library/styles": [
+        "libs/styles/index.ts"
       ]
     }
   },

@@ -1,29 +1,23 @@
 {
   "npmScope": "ui-library",
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
-      "!{projectRoot}/.eslintrc.json",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/.eslintrc.json",
       "!{projectRoot}/.stylelintrc(.(json|yml|yaml|js))?"
     ],
     "sharedGlobals": []
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "test": {
+      "inputs": ["default", "^production"]
     },
     "lint": {
       "inputs": [
@@ -32,41 +26,18 @@
         "{workspaceRoot}/.eslintignore"
       ]
     },
-    "test": {
-      "inputs": [
-        "default",
-        "^production",
-        "{workspaceRoot}/jest.preset.js"
-      ]
-    },
     "stylelint": {
       "inputs": [
         "default",
         "{workspaceRoot}/.stylelintrc(.(json|yml|yaml|js))?"
       ]
-    },
-    "e2e": {
-      "inputs": [
-        "default",
-        "^production"
-      ]
     }
-  },
-  "workspaceLayout": {
-    "appsDir": "packages",
-    "libsDir": "packages"
   },
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e",
-          "stylelint"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e", "stylelint"]
       }
     }
   }

@@ -1,9 +1,0 @@
-{
-  "name": "@ui-library/styles",
-  "version": "0.0.1",
-  "type": "commonjs",
-  "main": "index.scss",
-  "files": [
-    "src/**/*.scss"
-  ]
-}
